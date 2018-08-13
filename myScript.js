@@ -3,16 +3,30 @@
 // input name
 // replace ... with input
 
-function Hero(name, level){
-    this.name = name;
-    this.level = level;
+function Book(title, authorFirst, authorLast, numPages ){
+    this.title = title;
+    this.authorFirst = authorFirst;
+    this.authorLast = authorLast;
+    this.numPages = numPages;
 }
 
-let hero1 = new Hero('Stefan',1);
+let book1 = new Book('Harry Potter','JK','Rowling','500');
 
-Hero.prototype.greet = function () {
-    return `${this.name} says hello.`;
-  }
 
-hero1.greet();
-Object.getPrototypeOf(hero1);
+function CreateBookList(){
+
+    var list = document.createElement('ul'); 
+
+    for (var i = 0; i < 10; i++){
+        var item = document.createElement('li');
+
+        item.appendChild(document.createTextNode(i));
+
+        list.appendChild(item);
+
+    }
+    return list;
+}
+
+console.log(CreateBookList());
+
